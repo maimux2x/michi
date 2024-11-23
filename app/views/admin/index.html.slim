@@ -1,0 +1,8 @@
+- if authenticated?
+  = button_to "ログアウト", session_path, method: :delete
+- else
+  = link_to "ログイン", new_session_path
+h1
+  | Admin#index
+p
+  | Find me in app/views/admin/index.html.erb
