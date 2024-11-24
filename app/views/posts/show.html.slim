@@ -1,3 +1,6 @@
+.nav.justify-content-end
+  = link_to "一覧", posts_path, class: 'nav-link'
+
 table
   tbody
     tr
@@ -6,6 +9,3 @@ table
       td= @post.title
     tr
       td= @post.body
-
-div
-  = link_to "一覧", posts_path
