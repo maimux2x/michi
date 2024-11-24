@@ -1,0 +1,7 @@
+.mb-3
+  table
+    tbody
+      - @posts.each do |post|
+        tr
+          td= link_to post.title, post_path(post)
+          td= post.created_at.strftime("%Y-%m-%d")

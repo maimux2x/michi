@@ -1,0 +1,22 @@
+div
+  - if authenticated?
+    = button_to "ログアウト", session_path, method: :delete
+  - else
+    = link_to "ログイン", new_session_path
+
+div
+  = link_to "新規投稿", new_admin_post_path
+
+div
+  table
+    thead
+      tr
+        td 投稿日
+        td タイトル
+        td 
+    tbody
+      - @posts.each do |post|
+        tr
+          td= post.created_at.strftime("%Y-%m-%d")
+          td= link_to post.title, edit_admin_post_path(post)
+          td= link_to "削除", admin_post_path(post), data: { turbo_method: :delete }
