@@ -1,2 +1,15 @@
 // Sassy
+.link {
+    text-decoration: none;
+    color: black ; 
+}
+
+.link:hover {
+  color: navy;
+}
+
+.date {
+  text-align: center;
+}
+
 @import "bootstrap";
