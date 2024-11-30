@@ -1,4 +1,38 @@
 // Sassy
+.page-title {
+    font-size: 3.75rem;
+    font-family: 'Amatic SC', cursive;
+}
+
+header {
+    margin: 2.5rem auto 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.main {
+  margin-bottom: 3rem;
+}
+
+.nav {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between; /* 両端に配置 */
+  align-items: center; /* 垂直方向に中央揃え */
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #007bff; /* リンク色 */
+}
+
+.nav-item:hover {
+  text-decoration: underline; /* ホバー時の装飾 */
+}
+
 .link {
     text-decoration: none;
     color: black ; 
@@ -8,8 +42,28 @@
   color: navy;
 }
 
-.date {
+table.table .date {
   text-align: center;
+  color: silver;
+}
+
+.post-date {
+  padding: 0 .5rem .875rem;
+  color: silver;
+  font-size: 1.5rem;
+  margin: 4px auto 0;
+}
+
+.post-title h2 {
+  padding: 0 .5rem .875rem;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.post-body {
+  padding: 0 .5rem .875rem;
+  font-size: 1rem;
+  margin-bottom: 0;
 }
 
 @import "bootstrap";
