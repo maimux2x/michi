@@ -6,4 +6,4 @@
       .post-title
         h2= @post.title
       .post-body
-        = @post.body
+        = simple_format(@post.body)
