@@ -23,7 +23,13 @@
   </head>
 
   <body>
-    <h1>道 未知 充ち！</h1>
-    <%= yield %>
+    <div class="app-title navbar navbar-expand-md navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand page-title" href="/">道 未知 充ち!</a>
+      </div>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
