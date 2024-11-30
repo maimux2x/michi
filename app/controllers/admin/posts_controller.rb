@@ -1,4 +1,6 @@
 class Admin::PostsController < ApplicationController
+  layout "admin"
+
   def index
     @posts = Post.order(created_at: :desc)
   end
