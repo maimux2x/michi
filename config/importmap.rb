@@ -9,8 +9,6 @@ pin_all_from "app/javascript/admin/controllers", under: "admin/controllers", pre
 pin "@hotwired/turbo-rails", to: "turbo.min.js"
 pin "@hotwired/stimulus", to: "stimulus.min.js"
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
-pin "bootstrap" # @5.3.3
-pin "@popperjs/core", to: "@popperjs--core.js" # @2.11.8
 
 pin "@rails/activestorage", to: "@rails--activestorage.js", preload: false # @8.0.0
 pin "autosize", preload: false # @6.0.1
