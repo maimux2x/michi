@@ -29,8 +29,6 @@ class Post < ApplicationRecord
   end
 
   def purge_unattached_blobs
-    attachments.each do |attachment|
-      attachment.blob.purge if attachment.blob.attachments.empty?
-    end
+    ActiveStorage::Blob.unattached.each(&:purge)
   end
 end
