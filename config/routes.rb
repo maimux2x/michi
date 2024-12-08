@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   root "posts#index"
 
+  get "posts/:year/:month/:day/:id", to: "posts#show"
+
   resource :session
   resources :passwords, param: :token
 
@@ -14,5 +16,18 @@ Rails.application.routes.draw do
     root "posts#index"
 
     resources :posts, only: %i[new create edit update destroy]
+  end
+
+  direct :post do |post|
+    year, month, day = post.created_at.to_date.to_s.split("-")
+
+    {
+      controller: "/posts",
+      action: :show,
+      year:,
+      month:,
+      day:,
+      id:     post.id
+    }
   end
 end
