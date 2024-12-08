@@ -1,0 +1,6 @@
+turbo-frame#post_navigation
+  #navigation
+    - if previous_post
+      = link_to "<", post_path(previous_post), data: { turbo_frame: "post_navigation" }
+    - if next_post
+      = link_to ">", post_path(next_post), data: { turbo_frame: "post_navigation" }

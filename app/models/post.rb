@@ -11,6 +11,14 @@ class Post < ApplicationRecord
     Commonmarker.to_html(body).html_safe
   end
 
+  def next
+    Post.where("id > ?", id).order(:id).first
+  end
+
+  def previous
+    Post.where("id < ?", id).order(id: :desc).first
+  end
+
   private
 
   def set_attachments
