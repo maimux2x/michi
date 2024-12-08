@@ -12,12 +12,12 @@ module ApplicationHelper
         title: :title,
         type: "website",
         url: request.original_url,
-        image: image_url("/IMG_0025.PNG"),
+        image: image_url("/IMG_026.PNG"),
         local: "ja-JP"
       },
       twitter: {
         site: "@",
-        image: image_url("/IMG_0025.PNG")
+        image: image_url("/IMG_026.PNG")
       }
     }
   end
