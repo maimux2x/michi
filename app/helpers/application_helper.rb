@@ -1,5 +1,7 @@
 module ApplicationHelper
-    def default_meta_tags
+  include Pagy::Frontend
+
+  def default_meta_tags
     {
       site: "michi",
       title: "道 未知 充ち！",

@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   allow_unauthenticated_access(only: %i[index show])
 
   def index
-    @posts = Post.order(created_at: :desc).limit(20)
+    @pagy, @posts = pagy Post.order(created_at: :desc)
   end
 
   def show
