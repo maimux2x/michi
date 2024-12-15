@@ -1,10 +1,3 @@
-GIT
-  remote: https://github.com/slim-template/html2slim.git
-  revision: e92e6bb80570dce0c413a6ff01b858754845df24
-  specs:
-    html2slim (0.2.0)
-      nokogiri
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -227,6 +220,7 @@ GEM
     nokogiri (1.17.2-x86_64-linux)
       racc (~> 1.4)
     ostruct (0.6.1)
+    pagy (9.3.3)
     parallel (1.26.3)
     parser (3.3.6.0)
       ast (~> 2.4.1)
@@ -434,12 +428,12 @@ DEPENDENCIES
   commonmarker
   dartsass-rails
   debug
-  html2slim!
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
   kamal
   meta-tags
+  pagy
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.1)
@@ -450,6 +444,7 @@ DEPENDENCIES
   solid_queue
   sqlite3 (>= 2.1)
   stimulus-rails
+  stringio
   thruster
   turbo-rails
   tzinfo-data
