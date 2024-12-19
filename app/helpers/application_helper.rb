@@ -4,7 +4,7 @@ module ApplicationHelper
   def default_meta_tags
     {
       site: "道 未知 充ち！",
-      title: "",
+      title: "道 未知 充ち！",
       reverse: true,
       charset: "utf-8",
       canonical: request.original_url,
