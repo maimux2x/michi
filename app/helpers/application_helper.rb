@@ -3,8 +3,8 @@ module ApplicationHelper
 
   def default_meta_tags
     {
-      site: "michi",
-      title: "道 未知 充ち！",
+      site: "道 未知 充ち！",
+      title: "",
       reverse: true,
       charset: "utf-8",
       canonical: request.original_url,
