@@ -3,7 +3,7 @@ module ApplicationHelper
 
   def default_meta_tags
     {
-      site: "michi",
+      site: "道 未知 充ち！",
       title: "道 未知 充ち！",
       reverse: true,
       charset: "utf-8",
