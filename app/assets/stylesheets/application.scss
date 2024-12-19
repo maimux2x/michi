@@ -70,4 +70,23 @@ img {
     max-width: 100%;
   }
 
+.pagination>li {
+  margin: 0 7px;
+}
+
+.pagination>li>a {
+    border: none;
+    color: #696969;
+    padding: 5px 15px;
+  }
+
+.pagination>li.active>a {
+  background: #f0a8ae;
+  border-radius: 15px;
+}
+
+.pagination>li>a:hover {
+  border-radius: 15px;
+}
+
 @import "bootstrap";
