@@ -9,4 +9,4 @@
       .post-body
         = @post.rendered_body  
 
-  = render partial: "navigation", locals: { previous_post: @previous_post, next_post: @next_post } 
+  = render partial: "navigation", locals: { post: @post } 
