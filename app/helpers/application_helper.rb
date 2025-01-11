@@ -14,13 +14,12 @@ module ApplicationHelper
         title: :title,
         type: "website",
         url: request.original_url,
-        image: image_url("/IMG_026.png"),
+        image: image_url("/OGP.png"),
         local: "ja-JP"
       },
       twitter: {
-        card: "summary_large_image",
         site: "@",
-        image: image_url("/OGP_card.png")
+        image: image_url("/OGP.png")
       }
     }
   end
