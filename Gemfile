@@ -7,7 +7,7 @@ gem "bootsnap", require: false
 gem "bootstrap", "~> 5.3.3"
 gem "commonmarker"
 gem "dartsass-rails"
-gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.14"
 gem "importmap-rails"
 gem "jbuilder"
 gem "kamal", require: false
