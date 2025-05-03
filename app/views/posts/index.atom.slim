@@ -1,0 +1,23 @@
+| <?xml version="1.0" encoding="utf-8"?>
+feed xmlns="http://www.w3.org/2005/Atom"
+  title michi.maimux2x.com
+  link href="#{root_url}"
+  link rel="self" href="#{posts_url(format: :atom)}"
+  link rel="hub" href="https://pubsubhubbub.appspot.com"
+  id #{root_url}
+  updated #{@posts.first.created_at.iso8601}
+
+  - @posts.each do |post|
+    entry
+      title #{post.title}
+      link href="#{post_url(post)}"
+      id #{post_url(post)}
+      updated #{post.updated_at.iso8601}
+
+      content type="html"
+        | <![CDATA[
+        = Commonmarker.to_html(post.body)
+        | ]]>
+
+      author
+        name maimu
