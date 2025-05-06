@@ -29,6 +29,10 @@
     <div class="app-title navbar navbar-expand-md navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand page-title" href="/">道 未知 充ち!</a>
+        <%= form_tag search_posts_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :search, params[:query], class: "form-control form-control-sm me-2", placeholder: "Search" %>
+          <%= submit_tag "検索", class: "btn btn-outline-dark" %>
+        <% end %>
       </div>
     </div>
     <div class="container">

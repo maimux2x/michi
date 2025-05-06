@@ -5,6 +5,11 @@ class Post < ApplicationRecord
   before_save :set_attachments
   after_commit :purge_unattached_blobs
 
+  scope :search, (->(query) { where(
+    "title LIKE :query OR body LIKE :query",
+    query: "%#{sanitize_sql_like(query)}%"
+  )})
+
   def rendered_body
     return "" unless body
 
