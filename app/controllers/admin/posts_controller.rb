@@ -39,6 +39,12 @@ class Admin::PostsController < ApplicationController
     redirect_to admin_root_path
   end
 
+  def preview
+    @post = Post.new(post_params)
+
+    render layout: false
+  end
+
   private
 
   def post_params

@@ -3,24 +3,26 @@
     - post.errors.full_messages.each do |message|
       li = message
 
-.row
+.row data-controller="preview" data-preview-url-value=preview_admin_posts_path
   .col-6
     ruby:
       data = {
         controller:                         "attachment",
         action:                             "attachment:linkInserted->preview#update",
         attachment_direct_upload_url_value: rails_direct_uploads_path,
-        attachment_blob_url_template_value: rails_service_blob_path(":signed_id", ":filename")
+        attachment_blob_url_template_value: rails_service_blob_path(":signed_id", ":filename"),
+        preview_target:                     "form"
       }
     = form_with model: post, url: [ :admin, post ], data: do |form|
       .mb-3
         = form.label :title, "タイトル", class: "form-label"
-        = form.text_field :title, required: true, class: "form-control"
+        = form.text_field :title, required: true, class: "form-control", data: { action: "preview#update" }
 
       .mb-3
         ruby:
           data = {
             controller:        "autosize",
+            action:            "preview#update",
             attachment_target: "textarea"
           }
         = form.label :body, "本文", class: "form-label"
@@ -31,3 +33,5 @@
           | Upload
 
       button.btn.btn-primary type="submit" 保存
+  .col-6.card
+    = turbo_frame_tag "preview", data: { preview_target: "frame" }
