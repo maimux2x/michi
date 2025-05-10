@@ -1,10 +1,1 @@
-.mb-3
-  table.table.table-borderless.mb-5
-    tbody
-      - @posts.each do |post|
-        tr
-          td= link_to post.title, post_path(post), class: "link fs-3"
-          td.date= post.created_at.strftime("%Y-%m-%d")
-  - if @pagy.pages > 1
-    .d-flex.justify-content-center
-      == pagy_bootstrap_nav(@pagy)
+= render "summary", posts: @posts, pagy: @pagy
