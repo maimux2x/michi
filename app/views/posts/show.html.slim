@@ -8,5 +8,8 @@
         h2= @post.title
       .post-body
         = @post.rendered_body  
+      .post-tag
+        - @post.tag_names.each do |tag|
+          = link_to tag, tag_posts_path(tag), class: "badge bg-secondary me-1"
 
   = render partial: "navigation", locals: { post: @post } 

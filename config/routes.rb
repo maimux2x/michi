@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   root "posts#index"
 
+  get "posts/tag/:tag", to: "posts#tag", as: :tag_posts
   get "posts/:year/:month/:day/:id", to: "posts#show"
 
   resource :session
