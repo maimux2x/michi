@@ -26,6 +26,10 @@
         = form.label :body, "本文", class: "form-label"
         = form.text_area :body, required: true, class: "form-control", data:
 
+      .mb-3
+        = form.label :tag_names, "タグ", class: "form-label"
+        = form.text_field :tag_names, class: "form-control"
+
         label.btn.btn-link
           input(type="file" multiple hidden data-action="attachment#insertLink")
           | Upload
