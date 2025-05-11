@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   namespace :admin do
     root "posts#index"
 
-    resources :posts, only: %i[new create edit update destroy]
+    resources :posts, only: %i[new create edit update destroy] do
+      get "preview", on: :collection
+    end
   end
 
   direct :post do |post|
