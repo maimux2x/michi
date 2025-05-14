@@ -1,6 +1,8 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many_attached :attachments
+  has_many :taggings, dependent: :destroy
+  has_many :tags, through: :taggings
 
   before_save :set_attachments
   after_commit :purge_unattached_blobs
@@ -11,6 +13,19 @@ class Post < ApplicationRecord
       query: "%#{sanitize_sql_like(query)}%"
     )
   }
+
+  def tag_names
+    taggings.sort_by(&:position).map { it.tag.name }
+  end
+
+  def tag_names=(tags)
+    names = tags.split(/\s+/)
+
+    self.taggings = names.map.with_index { |name, i|
+      tag = Tag.find_or_create_by!(name:)
+      Tagging.new(tag:, position: i)
+    }
+  end
 
   def rendered_body
     return "" unless body

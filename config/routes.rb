@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
 
-  resources :posts, only: %i[index show]
+  resources :posts, only: :index
+  resources :tags, only: :show, param: :name
 
   namespace :admin do
     root "posts#index"

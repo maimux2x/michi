@@ -2,7 +2,7 @@ class Admin::PostsController < ApplicationController
   layout "admin"
 
   def index
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.order(created_at: :desc).includes(taggings: :tag)
   end
 
   def new
@@ -48,6 +48,6 @@ class Admin::PostsController < ApplicationController
   private
 
   def post_params
-    params.expect(post: %i[title body])
+    params.expect(post: [ :title, :body, :tag_names ])
   end
 end
