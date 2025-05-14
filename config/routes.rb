@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     resources :posts, only: %i[new create edit update destroy] do
       get "preview", on: :collection
     end
+
+    mount Litestream::Engine, at: "/litestream"
   end
 
   direct :post do |post|
