@@ -14,6 +14,10 @@ class Post < ApplicationRecord
     )
   }
 
+  def to_param
+    "#{id}-#{created_at.strftime("%Y%m%d")}"
+  end
+
   def tag_names
     taggings.sort_by(&:position).map { it.tag.name }
   end

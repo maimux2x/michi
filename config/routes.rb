@@ -5,13 +5,11 @@ Rails.application.routes.draw do
 
   root "posts#index"
 
-  get "posts/:year/:month/:day/:id", to: "posts#show"
-
   resource :session
   resources :passwords, param: :token
-
-  resources :posts, only: :index
+  resources :posts, only: :show
   resources :tags, only: :show, param: :name
+  resource :feed, only: :show
 
   namespace :admin do
     root "posts#index"
@@ -21,16 +19,5 @@ Rails.application.routes.draw do
     end
   end
 
-  direct :post do |post|
-    year, month, day = post.created_at.to_date.to_s.split("-")
-
-    {
-      controller: "/posts",
-      action: :show,
-      year:,
-      month:,
-      day:,
-      id:     post.id
-    }
-  end
+  get "posts.atom", to: redirect("feed.atom")
 end
