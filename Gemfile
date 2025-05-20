@@ -11,6 +11,7 @@ gem "image_processing", "~> 1.14"
 gem "importmap-rails"
 gem "jbuilder"
 gem "kamal", require: false
+gem "litestream"
 gem "meta-tags"
 gem "pagy"
 gem "propshaft"
