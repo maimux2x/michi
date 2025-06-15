@@ -13,3 +13,5 @@ pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
 pin "@rails/activestorage", to: "@rails--activestorage.js", preload: false # @8.0.0
 pin "autosize", preload: false # @6.0.1
 pin "stimulus-use", preload: false # @0.52.2
+pin "@popperjs/core", to: "popper.js"
+pin "bootstrap", to: "bootstrap.min.js"
