@@ -1,11 +1,6 @@
 .nav.justify-content-between.d-flex
   .left-links
     = link_to "新規投稿", new_admin_post_path, class: "nav-item"
-  .right-links
-    - if authenticated?
-      = link_to "ログアウト", session_path, data: { turbo_method: :delete }, class: "nav-item"
-    - else
-      = link_to "ログイン", new_session_path, class: "nav-item"
 
 .main
   table.table.table-borderless
