@@ -7,4 +7,4 @@
           td.date= l(post.created_at.to_date)
   - if pagy.pages > 1
     .d-flex.justify-content-center
-      == pagy_bootstrap_nav(pagy)
+      == pagy.series_nav(:bootstrap)
