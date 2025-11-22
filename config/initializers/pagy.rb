@@ -1,3 +1,1 @@
-require "pagy/extras/bootstrap"
-
-Pagy::DEFAULT[:limit] = 15
+Pagy.options[:limit] = 1
