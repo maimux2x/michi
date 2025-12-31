@@ -1,0 +1,17 @@
+<div class="mb-3">
+  <table class="table table-borderless mb-5">
+    <tbody>
+      <% posts.each do |post| %>
+        <tr>
+          <td><%= link_to post.title, post_path(post), class: "link fs-3" %></td>
+          <td class="date"><%= l(post.created_at.to_date) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% if pagy.pages > 1 %>
+    <div class="d-flex justify-content-center">
+      <%== pagy.series_nav(:bootstrap) %>
+    </div>
+  <% end %>
+</div>

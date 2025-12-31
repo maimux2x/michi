@@ -1,0 +1,23 @@
+<% set_meta_tags title: @post.title %>
+<div class="container">
+  <div class="post-date">
+    <%= l(@post.created_at.to_date) %>
+  </div>
+  <div class="main">
+    <div class="article">
+      <div class="post-title">
+        <h2><%= @post.title %></h2>
+      </div>
+      <div class="post-body">
+        <%= @post.rendered_body %>
+      </div>
+      <div class="post-tag">
+        <% @post.tag_names.each do |tag| %>
+          <%= link_to tag, tag_path(tag), class: "badge bg-secondary me-1" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <%= render "navigation", post: @post %>
+</div>

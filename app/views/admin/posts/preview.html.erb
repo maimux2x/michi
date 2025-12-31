@@ -1,0 +1,10 @@
+<%= turbo_frame_tag "preview" do %>
+  <div class="article">
+    <div class="post-title">
+      <h2><%= @post.title %></h2>
+    </div>
+    <div class="post-body">
+      <%= @post.rendered_body %>
+    </div>
+  </div>
+<% end %>
