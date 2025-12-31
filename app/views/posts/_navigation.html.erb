@@ -1,0 +1,12 @@
+<nav class="d-flex justify-content-between">
+  <% if post.next.present? %>
+    <%= link_to "< #{post.next.title}", post_path(post.next), class: "link", data: { turbo: false } %>
+  <% else %>
+    <span></span>
+  <% end %>
+  <% if post.previous.present? %>
+    <%= link_to "#{post.previous.title} >", post_path(post.previous), class: "link", data: { turbo: false } %>
+  <% else %>
+    <span></span>
+  <% end %>
+</nav>

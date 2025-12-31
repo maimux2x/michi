@@ -1,0 +1,55 @@
+<% unless post.errors.empty? %>
+  <ul>
+    <% post.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%
+  form_data = {
+    controller:                         "attachment",
+    action:                             "attachment:linkInserted->preview#update",
+    attachment_direct_upload_url_value: rails_direct_uploads_path,
+    attachment_blob_url_template_value: rails_service_blob_path(":signed_id", ":filename"),
+    preview_target:                     "form"
+  }
+%>
+
+<div class="row" data-controller="preview" data-preview-url-value="<%= preview_admin_posts_path %>">
+  <div class="col-6">
+    <%= form_with model: post, url: [:admin, post], data: form_data do |form| %>
+      <div class="mb-3">
+        <%= form.label :title, "タイトル", class: "form-label" %>
+        <%= form.text_field :title, required: true, class: "form-control", data: { action: "preview#update" } %>
+      </div>
+
+      <div class="mb-3">
+        <%
+          textarea_data = {
+            controller:        "autosize",
+            action:            "preview#update",
+            attachment_target: "textarea"
+          }
+        %>
+        <%= form.label :body, "本文", class: "form-label" %>
+        <%= form.text_area :body, required: true, class: "form-control", data: textarea_data %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :tag_names, "タグ", class: "form-label" %>
+        <%= form.text_field :tag_names, class: "form-control" %>
+
+        <label class="btn btn-link">
+          <input type="file" multiple hidden data-action="attachment#insertLink">
+          Upload
+        </label>
+      </div>
+
+      <button class="btn btn-primary" type="submit">保存</button>
+    <% end %>
+  </div>
+  <div class="col-6 card">
+    <%= turbo_frame_tag "preview", data: { preview_target: "frame" } %>
+  </div>
+</div>
