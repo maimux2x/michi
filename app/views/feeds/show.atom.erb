@@ -14,7 +14,9 @@
       <id><%= post_url(post) %></id>
       <updated><%= post.updated_at.iso8601 %></updated>
 
-      <content type="html"><![CDATA[<%= Commonmarker.to_html(post.body) %>]]></content>
+      <content type="html">
+        <%= Commonmarker.to_html(post.body) %>
+      </content>
 
       <author>
         <name>maimu</name>
