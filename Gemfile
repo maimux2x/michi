@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "rails", "~> 8.1.2"
 
-gem "bcrypt", "~> 3.1.21"
+gem "bcrypt", "~> 3.1.22"
 gem "bootsnap", require: false
 gem "bootstrap", "~> 5.3.8"
 gem "commonmarker"
